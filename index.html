@@ -1,0 +1,40 @@
+<html lang="es" ng-app="app" ng-controller="AppControl as th">
+    <head>
+        <meta charset="utf-8">
+        <title>Primera Pag con AngularJS</title>
+    </head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    
+    <input type="text"  ng-model="th.nombre"><br />
+    {{th.nombre}}<br />
+    <br />
+    <input type="text" ng-model="th.apellido"><br />
+    {{th.apellido}}
+    <br />
+    <br />
+    <select name="categorias" ng-model="opcion">
+    <option value="Americano">Opcion 1</option>
+    <option value="Español">Opcion 2</option>
+    <option value="Holandes">Opcion 3</option>    
+    </select>
+    <br />
+    <br />
+    Elegiste la opcion {{opcion}}
+    
+    <br />
+    <br />
+    <input type="button" ng-click="th.LlenarCampos()" value="Cambiar Nombre">
+    <script>
+    var app = angular.module("app", []);
+        app.controller("AppControl", function(){
+    var th = this;
+            th.LlenarCampos = function(){
+                th.nombre='Helder Mateo';
+                th.apellido='Muñoz Cano';
+            }
+        })
+    </script>
+    
+    </body>
+</html>
